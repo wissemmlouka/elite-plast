@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "Eline Plast — Systèmes d'irrigation et tuyaux PVC",
+    "description": "Eline Plast fabrique des tuyaux PVC et PEHD durables, des lignes de goutte-à-goutte et des raccords pour l'agriculture et l'aménagement paysager en Tunisie."
+  },
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "solutions": "Solutions",
+    "projects": "Projets",
+    "about": "À propos",
+    "contact": "Contact",
+    "requestQuote": "Demander un devis",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "menuTitle": "Menu de navigation",
+    "skipToContent": "Aller au contenu"
+  },
+  "hero": {
+    "eyebrow": "Solutions d'irrigation",
+    "title": "Systèmes d'irrigation fiables pour l'agriculture moderne",
+    "description": "Eline Plast fabrique des tuyaux PVC et PEHD durables, des lignes de goutte-à-goutte et des raccords qui aident les agriculteurs à optimiser l'usage de l'eau et à produire plus avec moins.",
+    "primary": "Demander un devis",
+    "secondary": "Découvrir nos produits",
+    "trust": "La confiance des exploitations et des distributeurs partout en Tunisie.",
+    "imageLabel": "Visuel produit"
+  },
+  "stats": {
+    "ariaLabel": "Chiffres clés",
+    "items": [
+      { "value": 20, "suffix": "+", "label": "Années d'expérience" },
+      { "value": 500, "suffix": "+", "label": "Projets réalisés" },
+      { "value": 1000, "suffix": "+", "label": "Clients satisfaits" },
+      { "value": 50, "suffix": "+", "label": "Références produits" }
+    ]
+  },
+  "products": {
+    "eyebrow": "Nos produits",
+    "title": "Une gamme complète de produits d'irrigation",
+    "description": "Des lignes de goutte-à-goutte aux tuyaux de distribution, tout ce dont vous avez besoin pour une gestion efficace de l'eau.",
+    "cardCta": "Voir le produit",
+    "items": [
+      {
+        "slug": "drip-irrigation",
+        "title": "Irrigation goutte-à-goutte",
+        "description": "Des lignes de goutte-à-goutte précises qui délivrent l'eau directement aux racines et réduisent le gaspillage."
+      },
+      {
+        "slug": "sprinkler-systems",
+        "title": "Systèmes d'aspersion",
+        "description": "Des asperseurs fiables pour une couverture uniforme des champs et des espaces verts."
+      },
+      {
+        "slug": "pehd-pipes",
+        "title": "Tuyaux PEHD",
+        "description": "Des tuyaux en polyéthylène haute densité conçus pour une distribution d'eau durable."
+      },
+      {
+        "slug": "pvc-pipes",
+        "title": "Tuyaux PVC",
+        "description": "Un tuyau PVC solide et durable pour les réseaux agricoles et industriels."
+      },
+      {
+        "slug": "fittings-accessories",
+        "title": "Raccords et accessoires",
+        "description": "Connecteurs, vannes et accessoires pour compléter chaque installation."
+      },
+      {
+        "slug": "water-management",
+        "title": "Gestion de l'eau",
+        "description": "Des solutions de pression et de débit qui maintiennent votre irrigation efficace."
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "Pourquoi Eline Plast",
+    "title": "Conçu pour les agriculteurs exigeants",
+    "description": "Nous allions expertise industrielle et compréhension approfondie de la gestion de l'eau en agriculture.",
+    "items": [
+      {
+        "title": "Qualité et fiabilité prouvées",
+        "description": "Chaque produit est fabriqué selon des normes strictes pour une performance durable sur le terrain."
+      },
+      {
+        "title": "Efficacité hydrique",
+        "description": "Nos solutions d'irrigation vous aident à utiliser moins d'eau tout en améliorant les rendements."
+      },
+      {
+        "title": "Accompagnement expert",
+        "description": "Notre équipe vous aide à choisir, installer et entretenir le système adapté à vos besoins."
+      }
+    ]
+  },
+  "featured": {
+    "ariaLabel": "Projet phare",
+    "tag": "Projet phare",
+    "title": "Irrigation goutte-à-goutte à grande échelle pour une oliveraie de 40 hectares",
+    "description": "Nous avons conçu et fourni un réseau complet de goutte-à-goutte qui a réduit la consommation d'eau tout en améliorant la régularité des rendements sur toute l'exploitation.",
+    "imageLabel": "Visuel projet",
+    "cta": "Voir nos projets",
+    "highlights": [
+      "35 % de consommation d'eau en moins",
+      "Couverture uniforme sur 40 hectares",
+      "Installé et mis en service en 6 semaines"
+    ]
+  },
+  "gallery": {
+    "title": "Notre travail sur le terrain",
+    "description": "Un aperçu de nos produits, de notre production et de nos projets d'irrigation à travers la Tunisie.",
+    "view": "Voir l'image : {alt}",
+    "close": "Fermer",
+    "previous": "Image précédente",
+    "next": "Image suivante",
+    "items": [
+      "Lignes de goutte-à-goutte dans une oliveraie",
+      "Ligne de production de tuyaux PEHD",
+      "Asperseurs arrosant un champ verdoyant",
+      "Rouleaux de tuyau d'irrigation en PVC",
+      "Technicien installant des raccords d'irrigation",
+      "Vue aérienne d'une exploitation irriguée"
+    ]
+  },
+  "testimonials": {
+    "title": "La confiance des producteurs et distributeurs",
+    "description": "Ce que nos clients disent de leur collaboration avec Eline Plast.",
+    "sample": "Exemple",
+    "items": [
+      {
+        "quote": "Le système de goutte-à-goutte a réduit nos factures d'eau et facilité la gestion de l'irrigation sur toute l'exploitation.",
+        "name": "Ahmed Ben Salah",
+        "company": "Oliveraie, Sfax"
+      },
+      {
+        "quote": "Des produits fiables et un support réactif. Eline Plast est devenu notre fournisseur de référence pour les tuyaux d'irrigation.",
+        "name": "Leïla Trabelsi",
+        "company": "Distributeur agricole, Tunis"
+      },
+      {
+        "quote": "Une qualité qui tient saison après saison. L'installation a été rapide et les résultats parlent d'eux-mêmes.",
+        "name": "Mohamed Karray",
+        "company": "Vignoble, Kairouan"
+      }
+    ]
+  },
+  "cta": {
+    "ariaLabel": "Demander un devis",
+    "title": "Prêt à optimiser votre irrigation ?",
+    "description": "Parlez à notre équipe des tuyaux, lignes de goutte-à-goutte et raccords adaptés à votre projet — et obtenez un devis sur mesure.",
+    "primary": "Demander un devis",
+    "secondary": "Découvrir nos produits"
+  },
+  "footer": {
+    "description": "Des systèmes d'irrigation fiables et des solutions PVC qui aident les agriculteurs et les professionnels à optimiser la gestion de l'eau.",
+    "company": "Entreprise",
+    "products": "Produits",
+    "contact": "Contact",
+    "quickLinks": [
+      { "label": "Accueil", "href": "/" },
+      { "label": "Solutions", "href": "/solutions" },
+      { "label": "Projets", "href": "/projects" },
+      { "label": "À propos", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "productLinks": [
+      "Irrigation goutte-à-goutte",
+      "Tuyaux PEHD",
+      "Tuyaux PVC",
+      "Asperseurs",
+      "Raccords et accessoires"
+    ],
+    "address": "Zone Industrielle, Tunisie",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "rights": "Tous droits réservés."
+  }
+}

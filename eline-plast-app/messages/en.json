@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "Eline Plast — Irrigation Systems & PVC Pipes",
+    "description": "Eline Plast manufactures durable PVC and PEHD pipes, drip irrigation lines, and fittings for agriculture and landscaping across Tunisia."
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "solutions": "Solutions",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "requestQuote": "Request a Quote",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Navigation menu",
+    "skipToContent": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "Irrigation Solutions",
+    "title": "Reliable Irrigation Systems for Modern Agriculture",
+    "description": "Eline Plast manufactures durable PVC and PEHD pipes, drip lines, and fittings that help farmers optimize water use and grow more with less.",
+    "primary": "Request a Quote",
+    "secondary": "Explore Products",
+    "trust": "Trusted by farms and distributors across Tunisia.",
+    "imageLabel": "Product imagery"
+  },
+  "stats": {
+    "ariaLabel": "Company figures",
+    "items": [
+      { "value": 20, "suffix": "+", "label": "Years of Experience" },
+      { "value": 500, "suffix": "+", "label": "Projects Delivered" },
+      { "value": 1000, "suffix": "+", "label": "Satisfied Customers" },
+      { "value": 50, "suffix": "+", "label": "Product References" }
+    ]
+  },
+  "products": {
+    "eyebrow": "Our Products",
+    "title": "A Complete Irrigation Product Range",
+    "description": "From drip lines to distribution pipes, everything you need for efficient water management.",
+    "cardCta": "View product",
+    "items": [
+      {
+        "slug": "drip-irrigation",
+        "title": "Drip Irrigation",
+        "description": "Precision drip lines that deliver water straight to the roots and cut waste."
+      },
+      {
+        "slug": "sprinkler-systems",
+        "title": "Sprinkler Systems",
+        "description": "Reliable sprinklers for even coverage across fields and landscapes."
+      },
+      {
+        "slug": "pehd-pipes",
+        "title": "PEHD Pipes",
+        "description": "High-density polyethylene pipes built for durable water distribution."
+      },
+      {
+        "slug": "pvc-pipes",
+        "title": "PVC Pipes",
+        "description": "Strong, long-lasting PVC piping for agricultural and industrial networks."
+      },
+      {
+        "slug": "fittings-accessories",
+        "title": "Fittings & Accessories",
+        "description": "Connectors, valves, and accessories to complete every installation."
+      },
+      {
+        "slug": "water-management",
+        "title": "Water Management",
+        "description": "Pressure and flow solutions that keep your irrigation running efficiently."
+      }
+    ]
+  },
+  "why": {
+    "eyebrow": "Why Eline Plast",
+    "title": "Built for Farmers Who Expect More",
+    "description": "We combine manufacturing expertise with a deep understanding of agricultural water management.",
+    "items": [
+      {
+        "title": "Proven Quality & Reliability",
+        "description": "Every product is manufactured to strict standards for long-lasting performance in the field."
+      },
+      {
+        "title": "Water-Saving Efficiency",
+        "description": "Our irrigation solutions help you use less water while improving crop yields."
+      },
+      {
+        "title": "Expert Support",
+        "description": "Our team helps you choose, install, and maintain the right system for your needs."
+      }
+    ]
+  },
+  "featured": {
+    "ariaLabel": "Featured project",
+    "tag": "Featured Project",
+    "title": "Large-Scale Drip Irrigation for a 40-Hectare Olive Farm",
+    "description": "We designed and supplied a complete drip irrigation network that cut water use while improving yield consistency across the entire farm.",
+    "imageLabel": "Project imagery",
+    "cta": "View Our Projects",
+    "highlights": [
+      "35% reduction in water consumption",
+      "Uniform coverage across 40 hectares",
+      "Installed and commissioned in 6 weeks"
+    ]
+  },
+  "gallery": {
+    "title": "Our Work in the Field",
+    "description": "A look at our products, production, and irrigation projects across Tunisia.",
+    "view": "View image: {alt}",
+    "close": "Close",
+    "previous": "Previous image",
+    "next": "Next image",
+    "items": [
+      "Drip irrigation lines in an olive grove",
+      "PEHD pipe production line",
+      "Sprinklers watering a green field",
+      "Coils of PVC irrigation pipe",
+      "Technician installing irrigation fittings",
+      "Aerial view of an irrigated farm"
+    ]
+  },
+  "testimonials": {
+    "title": "Trusted by Growers and Distributors",
+    "description": "What our customers say about working with Eline Plast.",
+    "sample": "Sample",
+    "items": [
+      {
+        "quote": "The drip system reduced our water bills and made irrigation far easier to manage across the whole farm.",
+        "name": "Ahmed Ben Salah",
+        "company": "Olive Farm, Sfax"
+      },
+      {
+        "quote": "Reliable products and responsive support. Eline Plast has become our go-to supplier for irrigation pipe.",
+        "name": "Leila Trabelsi",
+        "company": "Agri Distributor, Tunis"
+      },
+      {
+        "quote": "Quality that holds up season after season. Installation was quick and the results speak for themselves.",
+        "name": "Mohamed Karray",
+        "company": "Vineyard, Kairouan"
+      }
+    ]
+  },
+  "cta": {
+    "ariaLabel": "Request a quote",
+    "title": "Ready to Optimize Your Irrigation?",
+    "description": "Talk to our team about the right pipes, drip lines, and fittings for your project — and get a quote tailored to your needs.",
+    "primary": "Request a Quote",
+    "secondary": "Explore Products"
+  },
+  "footer": {
+    "description": "Reliable irrigation systems and PVC solutions helping farmers and agricultural professionals optimize water management.",
+    "company": "Company",
+    "products": "Products",
+    "contact": "Contact",
+    "quickLinks": [
+      { "label": "Home", "href": "/" },
+      { "label": "Solutions", "href": "/solutions" },
+      { "label": "Projects", "href": "/projects" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "productLinks": [
+      "Drip Irrigation",
+      "PEHD Pipes",
+      "PVC Pipes",
+      "Sprinklers",
+      "Fittings & Accessories"
+    ],
+    "address": "Zone Industrielle, Tunisia",
+    "privacy": "Privacy Policy",
+    "terms": "Terms",
+    "rights": "All rights reserved."
+  }
+}
