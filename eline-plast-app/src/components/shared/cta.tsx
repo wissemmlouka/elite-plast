@@ -3,10 +3,11 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
+import type { StaticPathname } from "@/i18n/routing";
 
 interface CTAAction {
   label: string;
-  href: string;
+  href: StaticPathname;
 }
 
 interface CTAProps {
@@ -18,8 +19,8 @@ interface CTAProps {
 }
 
 /**
- * High-contrast conversion banner. Reusable as the homepage CTA and at the end
- * of future pages. Server component.
+ * High-contrast conversion banner. Reused as the homepage CTA and at the foot
+ * of every inner page. Server component.
  */
 export function CTA({
   title,

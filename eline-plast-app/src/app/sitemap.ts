@@ -1,32 +1,52 @@
 import type { MetadataRoute } from "next";
 
-import { routing } from "@/i18n/routing";
+import { pathnames, routing, type Locale } from "@/i18n/routing";
+import { products } from "@/data/products";
+import { projects } from "@/data/projects";
 
 // TODO: update to the real production domain when available.
 const siteUrl = "https://www.elineplast.tn";
 
-// Only live routes belong here. Add the marketing pages as they are built:
-// "/products", "/solutions", "/projects", "/about", "/contact".
-const routes = ["/"];
+/** Static routes, by internal pathname. `/quote` stays out — it is noindex. */
+const staticRoutes = [
+  "/",
+  "/products",
+  "/projects",
+  "/about",
+  "/contact",
+] as const;
 
-function localizedUrl(locale: string, route: string) {
-  return `${siteUrl}/${locale}${route === "/" ? "" : route}`;
+function resolve(pathname: string, locale: Locale, slug?: string) {
+  const entry = pathnames[pathname as keyof typeof pathnames];
+  const localized = typeof entry === "string" ? entry : entry[locale];
+  const withSlug = slug ? localized.replace("[slug]", slug) : localized;
+  return `${siteUrl}/${locale}${withSlug === "/" ? "" : withSlug}`;
+}
+
+function entryFor(pathname: string, priority: number, slug?: string) {
+  return routing.locales.map((locale) => ({
+    url: resolve(pathname, locale, slug),
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority,
+    alternates: {
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, resolve(pathname, l, slug)]),
+      ),
+    },
+  }));
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
-  return routes.flatMap((route) =>
-    routing.locales.map((locale) => ({
-      url: localizedUrl(locale, route),
-      lastModified,
-      changeFrequency: "monthly" as const,
-      priority: route === "/" ? 1 : 0.8,
-      alternates: {
-        languages: Object.fromEntries(
-          routing.locales.map((l) => [l, localizedUrl(l, route)]),
-        ),
-      },
-    })),
-  );
+  return [
+    ...staticRoutes.flatMap((route) =>
+      entryFor(route, route === "/" ? 1 : 0.8),
+    ),
+    ...products.flatMap((product) =>
+      entryFor("/products/[slug]", 0.7, product.slug),
+    ),
+    ...projects.flatMap((project) =>
+      entryFor("/projects/[slug]", 0.6, project.slug),
+    ),
+  ];
 }

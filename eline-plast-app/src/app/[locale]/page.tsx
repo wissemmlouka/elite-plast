@@ -19,7 +19,7 @@ export default async function Home({
 
   return (
     <>
-      <Hero />
+      <Hero locale={locale} />
       <Statistics />
       <ProductCategories />
       <WhyChooseUs />

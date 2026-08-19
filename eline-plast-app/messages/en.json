@@ -1,176 +1,188 @@
 {
   "metadata": {
-    "title": "Eline Plast — Irrigation Systems & PVC Pipes",
-    "description": "Eline Plast manufactures durable PVC and PEHD pipes, drip irrigation lines, and fittings for agriculture and landscaping across Tunisia."
+    "title": "Eline Plast — Irrigation systems and PVC pipes",
+    "description": "Eline Plast manufactures durable PVC and HDPE pipes, drip lines and fittings for agriculture and landscaping in Tunisia."
   },
   "nav": {
     "home": "Home",
     "products": "Products",
-    "solutions": "Solutions",
     "projects": "Projects",
     "about": "About",
     "contact": "Contact",
-    "requestQuote": "Request a Quote",
+    "requestQuote": "Request a quote",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "menuTitle": "Navigation menu",
     "skipToContent": "Skip to content"
   },
   "hero": {
-    "eyebrow": "Irrigation Solutions",
-    "title": "Reliable Irrigation Systems for Modern Agriculture",
-    "description": "Eline Plast manufactures durable PVC and PEHD pipes, drip lines, and fittings that help farmers optimize water use and grow more with less.",
-    "primary": "Request a Quote",
-    "secondary": "Explore Products",
-    "trust": "Trusted by farms and distributors across Tunisia.",
-    "imageLabel": "Product imagery"
+    "eyebrow": "Irrigation solutions",
+    "title": "Reliable irrigation systems for modern agriculture",
+    "description": "Eline Plast manufactures durable PVC and HDPE pipes, drip lines and fittings that help farmers get more from every drop of water.",
+    "primary": "Request a quote",
+    "secondary": "Explore our products",
+    "trust": "Trusted by farms and distributors across Tunisia."
   },
   "stats": {
-    "ariaLabel": "Company figures",
-    "items": [
-      { "value": 20, "suffix": "+", "label": "Years of Experience" },
-      { "value": 500, "suffix": "+", "label": "Projects Delivered" },
-      { "value": 1000, "suffix": "+", "label": "Satisfied Customers" },
-      { "value": 50, "suffix": "+", "label": "Product References" }
-    ]
+    "ariaLabel": "Key figures",
+    "demoNote": "Demo figures, to be replaced with Eline Plast's real data."
   },
   "products": {
-    "eyebrow": "Our Products",
-    "title": "A Complete Irrigation Product Range",
+    "eyebrow": "Our products",
+    "title": "A complete range of irrigation products",
     "description": "From drip lines to distribution pipes, everything you need for efficient water management.",
     "cardCta": "View product",
-    "items": [
-      {
-        "slug": "drip-irrigation",
-        "title": "Drip Irrigation",
-        "description": "Precision drip lines that deliver water straight to the roots and cut waste."
-      },
-      {
-        "slug": "sprinkler-systems",
-        "title": "Sprinkler Systems",
-        "description": "Reliable sprinklers for even coverage across fields and landscapes."
-      },
-      {
-        "slug": "pehd-pipes",
-        "title": "PEHD Pipes",
-        "description": "High-density polyethylene pipes built for durable water distribution."
-      },
-      {
-        "slug": "pvc-pipes",
-        "title": "PVC Pipes",
-        "description": "Strong, long-lasting PVC piping for agricultural and industrial networks."
-      },
-      {
-        "slug": "fittings-accessories",
-        "title": "Fittings & Accessories",
-        "description": "Connectors, valves, and accessories to complete every installation."
-      },
-      {
-        "slug": "water-management",
-        "title": "Water Management",
-        "description": "Pressure and flow solutions that keep your irrigation running efficiently."
-      }
-    ]
+    "allCta": "See the full range",
+    "pageTitle": "Irrigation products",
+    "pageDescription": "Pipes, drip lines, fittings and water management solutions, manufactured for farms and professionals.",
+    "metaTitle": "Products",
+    "metaDescription": "The Eline Plast range: drip irrigation, sprinklers, HDPE and PVC pipes, fittings and water management.",
+    "allCategories": "All categories",
+    "countOne": "1 reference",
+    "countOther": "{count} references",
+    "applications": "Applications",
+    "advantages": "Advantages",
+    "specifications": "Specifications",
+    "specsNote": "Indicative demo values. Real datasheets will replace this table.",
+    "relatedProjects": "Projects using this product",
+    "back": "Back to products",
+    "quoteCta": "Request a quote for this product",
+    "notFound": "Product not found"
   },
   "why": {
     "eyebrow": "Why Eline Plast",
-    "title": "Built for Farmers Who Expect More",
-    "description": "We combine manufacturing expertise with a deep understanding of agricultural water management.",
-    "items": [
-      {
-        "title": "Proven Quality & Reliability",
-        "description": "Every product is manufactured to strict standards for long-lasting performance in the field."
-      },
-      {
-        "title": "Water-Saving Efficiency",
-        "description": "Our irrigation solutions help you use less water while improving crop yields."
-      },
-      {
-        "title": "Expert Support",
-        "description": "Our team helps you choose, install, and maintain the right system for your needs."
-      }
-    ]
+    "title": "Built for growers who expect more",
+    "description": "We combine industrial expertise with a deep understanding of water management in agriculture."
   },
   "featured": {
-    "ariaLabel": "Featured project",
-    "tag": "Featured Project",
-    "title": "Large-Scale Drip Irrigation for a 40-Hectare Olive Farm",
-    "description": "We designed and supplied a complete drip irrigation network that cut water use while improving yield consistency across the entire farm.",
-    "imageLabel": "Project imagery",
-    "cta": "View Our Projects",
-    "highlights": [
-      "35% reduction in water consumption",
-      "Uniform coverage across 40 hectares",
-      "Installed and commissioned in 6 weeks"
-    ]
+    "tag": "Featured project",
+    "cta": "View the project",
+    "demoNote": "Demo results. Real figures will be supplied by Eline Plast."
   },
   "gallery": {
-    "title": "Our Work in the Field",
-    "description": "A look at our products, production, and irrigation projects across Tunisia.",
+    "title": "Our work in the field",
+    "description": "A look at our products, our production and our irrigation projects across Tunisia.",
     "view": "View image: {alt}",
     "close": "Close",
     "previous": "Previous image",
-    "next": "Next image",
-    "items": [
-      "Drip irrigation lines in an olive grove",
-      "PEHD pipe production line",
-      "Sprinklers watering a green field",
-      "Coils of PVC irrigation pipe",
-      "Technician installing irrigation fittings",
-      "Aerial view of an irrigated farm"
-    ]
+    "next": "Next image"
   },
   "testimonials": {
-    "title": "Trusted by Growers and Distributors",
+    "title": "Trusted by growers and distributors",
     "description": "What our customers say about working with Eline Plast.",
-    "sample": "Sample",
-    "items": [
-      {
-        "quote": "The drip system reduced our water bills and made irrigation far easier to manage across the whole farm.",
-        "name": "Ahmed Ben Salah",
-        "company": "Olive Farm, Sfax"
-      },
-      {
-        "quote": "Reliable products and responsive support. Eline Plast has become our go-to supplier for irrigation pipe.",
-        "name": "Leila Trabelsi",
-        "company": "Agri Distributor, Tunis"
-      },
-      {
-        "quote": "Quality that holds up season after season. Installation was quick and the results speak for themselves.",
-        "name": "Mohamed Karray",
-        "company": "Vineyard, Kairouan"
-      }
-    ]
+    "sample": "Sample"
+  },
+  "projects": {
+    "eyebrow": "Case studies",
+    "pageTitle": "Irrigation projects",
+    "pageDescription": "Networks designed, supplied and commissioned for farms of every size, from greenhouse vegetables to open-field orchards.",
+    "metaTitle": "Projects",
+    "metaDescription": "Eline Plast case studies: olive groves, greenhouse vegetables, vineyards and orchards.",
+    "cardCta": "View the project",
+    "location": "Location",
+    "crop": "Crop",
+    "surface": "Area",
+    "solution": "Solution",
+    "year": "Year",
+    "results": "Results",
+    "galleryTitle": "On site",
+    "productsUsed": "Products used",
+    "back": "Back to projects",
+    "demoNote": "Demo project and results. Real case studies will replace this content.",
+    "notFound": "Project not found"
+  },
+  "about": {
+    "eyebrow": "About",
+    "pageTitle": "A Tunisian manufacturer of irrigation solutions",
+    "pageDescription": "We design and produce the networks that carry water to the root, from our production unit in Tunisia.",
+    "metaTitle": "About",
+    "metaDescription": "Eline Plast: mission, values, expertise and production of irrigation solutions in Tunisia.",
+    "missionTitle": "Our mission",
+    "valuesTitle": "Our values",
+    "valuesDescription": "What we refuse to compromise on, from raw material through to in-season support.",
+    "expertiseTitle": "Our expertise",
+    "expertiseDescription": "Three complementary disciplines, from sizing the network to having it on the shelf.",
+    "manufacturingTitle": "Production",
+    "manufacturingEyebrow": "Manufacturing"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "pageTitle": "Let's talk about your project",
+    "pageDescription": "A question about a product, a network to size, a restocking need: our team will get back to you.",
+    "metaTitle": "Contact",
+    "metaDescription": "Contact Eline Plast: phone, email and the address of our production unit in Tunisia.",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Opening hours",
+    "quoteTitle": "Need a quotation?",
+    "quoteDescription": "The quote form collects everything needed to size your network.",
+    "quoteCta": "Go to the quote form",
+    "demoNote": "Demo contact details. They will be replaced with Eline Plast's real information."
+  },
+  "quote": {
+    "eyebrow": "Quote",
+    "pageTitle": "Request a quote",
+    "pageDescription": "Describe your plot and your requirement. The more precise the information, the more precise the quotation.",
+    "metaTitle": "Request a quote",
+    "metaDescription": "Eline Plast quote request form: crop, area, location and products required.",
+    "formTitle": "Your request",
+    "prototypeNote": "Prototype: the form validates its fields but does not send anything yet. It will be wired up at launch.",
+    "sectionContact": "Your details",
+    "sectionProject": "Your project",
+    "name": "Full name",
+    "companyField": "Company or farm",
+    "email": "Email",
+    "phone": "Phone",
+    "projectType": "Project type",
+    "crop": "Crop",
+    "surface": "Area",
+    "location": "Location",
+    "productsField": "Products required",
+    "message": "Message",
+    "optional": "optional",
+    "select": "Select…",
+    "projectTypes": {
+      "new": "New installation",
+      "extension": "Extending an existing network",
+      "renovation": "Renovation",
+      "supply": "Product supply",
+      "other": "Other"
+    },
+    "placeholders": {
+      "name": "e.g. Amine Ben Youssef",
+      "company": "e.g. Domaine des Oliviers",
+      "email": "you@example.tn",
+      "phone": "+216 00 000 000",
+      "crop": "e.g. olives, greenhouse tomato, vines",
+      "surface": "e.g. 12 hectares",
+      "location": "e.g. Sfax region",
+      "message": "Available pressure, water source, plot constraints…"
+    },
+    "submit": "Send request",
+    "sending": "Sending…",
+    "successTitle": "Request recorded",
+    "successBody": "In the live version your request would go to the sales team. This prototype stops here.",
+    "successAgain": "Send another request",
+    "errors": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "summary": "Please check the highlighted fields."
+    }
   },
   "cta": {
     "ariaLabel": "Request a quote",
-    "title": "Ready to Optimize Your Irrigation?",
-    "description": "Talk to our team about the right pipes, drip lines, and fittings for your project — and get a quote tailored to your needs.",
-    "primary": "Request a Quote",
-    "secondary": "Explore Products"
+    "title": "Ready to optimise your irrigation?",
+    "description": "Talk to our team about the pipes, drip lines and fittings that fit your project — and get a tailored quote.",
+    "primary": "Request a quote",
+    "secondary": "Explore our products"
   },
   "footer": {
-    "description": "Reliable irrigation systems and PVC solutions helping farmers and agricultural professionals optimize water management.",
+    "description": "Reliable irrigation systems and PVC solutions that help farmers and professionals get more from their water.",
     "company": "Company",
     "products": "Products",
     "contact": "Contact",
-    "quickLinks": [
-      { "label": "Home", "href": "/" },
-      { "label": "Solutions", "href": "/solutions" },
-      { "label": "Projects", "href": "/projects" },
-      { "label": "About", "href": "/about" },
-      { "label": "Contact", "href": "/contact" }
-    ],
-    "productLinks": [
-      "Drip Irrigation",
-      "PEHD Pipes",
-      "PVC Pipes",
-      "Sprinklers",
-      "Fittings & Accessories"
-    ],
-    "address": "Zone Industrielle, Tunisia",
-    "privacy": "Privacy Policy",
-    "terms": "Terms",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "demoNote": "Prototype — demo content."
   }
 }

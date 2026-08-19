@@ -1,0 +1,157 @@
+/**
+ * Hero motion system, ported from Lovable's `styles.css`.
+ *
+ * Keyframes, durations and easings below are Lovable's own values, not a
+ * reconstruction. The hero's colour tokens are scoped to this section so the
+ * veil matches the original without redefining anything site-wide.
+ *
+ * Two fixes on the original: `translateX(-50%)` is baked into the ripple and
+ * cue keyframes (a transform animation overrides Tailwind's -translate-x-1/2,
+ * so both drifted off-centre in Lovable), and reduced motion pins the video on
+ * its poster frame.
+ */
+
+.hero {
+  /* Lovable's palette, scoped to the hero. */
+  --primary-deep: oklch(0.34 0.09 254);
+  --gradient-hero-veil: linear-gradient(
+    100deg,
+    color-mix(in oklab, var(--primary-deep) 88%, transparent) 0%,
+    color-mix(in oklab, var(--primary-deep) 62%, transparent) 45%,
+    color-mix(in oklab, var(--primary-deep) 12%, transparent) 100%
+  );
+  --shadow-elegant: 0 24px 60px -28px
+    color-mix(in oklab, var(--primary-deep) 55%, transparent);
+
+  background-color: var(--primary-deep);
+}
+
+.deep {
+  background-color: var(--primary-deep);
+}
+
+.media {
+  animation: ken-burns 22s ease-out forwards;
+}
+
+.veil {
+  background: var(--gradient-hero-veil);
+  animation: hero-veil 1.2s ease-out both;
+}
+
+.tint {
+  background-color: color-mix(in oklab, var(--primary-deep) 25%, transparent);
+}
+
+.rise {
+  opacity: 0;
+  animation: hero-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.drop {
+  animation: drop-fall 2.6s cubic-bezier(0.55, 0, 0.9, 0.4) infinite;
+}
+
+.ripple {
+  animation: ripple-out 2.6s ease-out infinite;
+}
+
+.cue {
+  animation: scroll-cue 2s ease-in-out infinite;
+}
+
+.ctaShadow {
+  box-shadow: var(--shadow-elegant);
+}
+
+/* --- Keyframes (Lovable's, verbatim except where noted) ------------------- */
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-veil {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1.08) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.16) translate3d(-1.5%, -1.5%, 0);
+  }
+}
+
+@keyframes drop-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.6);
+  }
+  15% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(58px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(74px) scale(0.4);
+  }
+}
+
+/* translateX(-50%) added: the animation would otherwise cancel the utility. */
+@keyframes ripple-out {
+  0% {
+    opacity: 0.55;
+    transform: translateX(-50%) scale(0.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* Same fix here. */
+@keyframes scroll-cue {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, 8px);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media,
+  .veil,
+  .rise,
+  .drop,
+  .ripple,
+  .cue {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Mid-flight drops read as artefacts once frozen. */
+  .drop,
+  .ripple {
+    display: none;
+  }
+}

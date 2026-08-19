@@ -1,22 +1,19 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
+import { cn } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 import { Section } from "@/components/layout/section";
 import { Container } from "@/components/layout/container";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
 import { ProductCard } from "@/components/shared/product-card";
-import { productIcons } from "@/content/home";
-
-interface ProductItem {
-  slug: string;
-  title: string;
-  description: string;
-}
+import { buttonVariants } from "@/components/ui/button";
+import type { Locale } from "@/i18n/routing";
+import { products } from "@/data/products";
 
 export function ProductCategories() {
   const t = useTranslations("products");
-  const items = t.raw("items") as ProductItem[];
-  const cta = t("cardCta");
+  const locale = useLocale() as Locale;
 
   return (
     <Section aria-labelledby="products-heading">
@@ -31,21 +28,28 @@ export function ProductCategories() {
           />
         </Reveal>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((product, index) => (
+          {products.map((product, index) => (
             <Reveal
               key={product.slug}
               delay={(index % 3) * 0.08}
               className="h-full"
             >
               <ProductCard
-                title={product.title}
-                description={product.description}
-                icon={productIcons[index]}
-                cta={cta}
+                product={product}
+                locale={locale}
+                cta={t("cardCta")}
               />
             </Reveal>
           ))}
         </div>
+        <Reveal>
+          <Link
+            href="/products"
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full sm:w-auto")}
+          >
+            {t("allCta")}
+          </Link>
+        </Reveal>
       </Container>
     </Section>
   );

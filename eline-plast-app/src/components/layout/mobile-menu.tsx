@@ -8,12 +8,12 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
-import type { NavItem } from "@/types";
+import type { ResolvedNavLink } from "@/data/navigation";
 
 interface MobileMenuProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  items: NavItem[];
+  items: ResolvedNavLink[];
   pathname: string;
 }
 
@@ -37,12 +37,13 @@ export function MobileMenu({
         <Dialog.Popup className="fixed inset-y-0 right-0 z-50 flex w-[min(20rem,85vw)] flex-col bg-background shadow-xl transition-transform duration-300 ease-out data-[ending-style]:translate-x-full data-[starting-style]:translate-x-full lg:hidden">
           <Dialog.Title className="sr-only">{t("menuTitle")}</Dialog.Title>
 
-          <div className="flex h-16 items-center justify-between px-5">
+          <div className="flex h-20 items-center justify-between px-5">
             <Image
               src="/logoelineplast.svg"
               alt="Eline Plast"
-              width={68}
-              height={48}
+              width={99}
+              height={70}
+              className="h-12 w-auto"
             />
             <Dialog.Close
               aria-label={t("closeMenu")}
@@ -77,7 +78,7 @@ export function MobileMenu({
             })}
 
             <Link
-              href="/contact"
+              href="/quote"
               onClick={close}
               className={cn(buttonVariants({ size: "lg" }), "mt-4 w-full")}
             >

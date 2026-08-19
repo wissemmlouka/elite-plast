@@ -1,19 +1,22 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Section } from "@/components/layout/section";
 import { Container } from "@/components/layout/container";
 import { SectionHeader } from "@/components/shared/section-header";
 import { Reveal } from "@/components/shared/reveal";
-import type { GalleryItem } from "@/types";
+import type { Locale } from "@/i18n/routing";
+import { gallery } from "@/data/gallery";
+import { pick } from "@/data/types";
 
 import { GalleryLightbox } from "./gallery-lightbox";
 
 export function Gallery() {
   const t = useTranslations("gallery");
-  // Empty src renders a labelled placeholder tile until real photos are added.
-  const items: GalleryItem[] = (t.raw("items") as string[]).map((alt) => ({
-    src: "",
-    alt,
+  const locale = useLocale() as Locale;
+
+  const items = gallery.map((item) => ({
+    src: item.src,
+    alt: pick(item.alt, locale),
   }));
 
   return (

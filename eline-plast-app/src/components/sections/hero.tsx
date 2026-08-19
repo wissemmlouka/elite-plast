@@ -1,83 +1,192 @@
-import { Droplets } from "lucide-react";
+import type { CSSProperties } from "react";
+import { ArrowRight, ChevronDown, Droplets } from "lucide-react";
+import { Outfit } from "next/font/google";
 import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
-import { Container } from "@/components/layout/container";
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import { Reveal } from "@/components/shared/reveal";
 
-export function Hero() {
+import styles from "./hero.module.css";
+
+/**
+ * APPROVED — do not redesign.
+ *
+ * Ported from Lovable's HeroSection: a looping video plate under a Ken Burns
+ * drift, the navy veil, a glass badge, the headline rising line by line, two
+ * CTAs, the trust line, the drip overlay and the scroll cue. Timings, easings
+ * and the veil gradient come from Lovable's own `styles.css`.
+ *
+ * The video carries the water: it is a five-second loop of the drip line
+ * running. The overlay drops sit on top of it as a light accent.
+ */
+
+/** Lovable sets the hero in Outfit; scoped here rather than site-wide. */
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+  variable: "--font-outfit",
+});
+
+const TITLE_LINES: Record<string, string[]> = {
+  fr: ["Systèmes d'irrigation", "fiables pour", "l'agriculture moderne"],
+  en: ["Reliable irrigation", "systems for", "modern agriculture"],
+};
+
+/** Lovable's own drop positions and delays. */
+const DROPS = [
+  { left: "18%", top: "42%", delay: "0s" },
+  { left: "34%", top: "56%", delay: "0.7s" },
+  { left: "52%", top: "38%", delay: "1.3s" },
+  { left: "68%", top: "60%", delay: "0.35s" },
+  { left: "82%", top: "46%", delay: "1.8s" },
+];
+
+function DripOverlay() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+    >
+      {DROPS.map((drop) => (
+        <span
+          key={drop.left}
+          className="absolute"
+          style={{ left: drop.left, top: drop.top }}
+        >
+          <span
+            className={cn(
+              styles.drop,
+              "block h-3 w-2 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] bg-white/70 blur-[0.4px]",
+            )}
+            style={{ animationDelay: drop.delay }}
+          />
+          <span
+            className={cn(
+              styles.ripple,
+              "absolute top-[60px] left-1/2 block size-6 rounded-full border border-white/60",
+            )}
+            style={{ animationDelay: drop.delay }}
+          />
+        </span>
+      ))}
+    </div>
+  );
+}
+
+export function Hero({ locale }: { locale: string }) {
   const t = useTranslations("hero");
+  const lines = TITLE_LINES[locale] ?? TITLE_LINES.fr;
 
   return (
     <section
-      className="relative overflow-hidden"
+      className={cn(
+        outfit.variable,
+        styles.hero,
+        "relative isolate min-h-[92svh] overflow-hidden",
+      )}
+      // Outfit for this section only; the rest of the site keeps Inter/Manrope.
+      style={
+        {
+          "--font-sans": "var(--font-outfit)",
+          "--font-heading": "var(--font-outfit)",
+        } as CSSProperties
+      }
       aria-labelledby="hero-heading"
     >
-      {/* Subtle dotted pattern, faded toward the edges. */}
-      <div
+      <video
+        className={cn(styles.media, "absolute inset-0 size-full object-cover")}
+        src="/videos/hero-irrigation.mp4"
+        poster="/images/hero-irrigation.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(var(--border)_1px,transparent_1px)] opacity-70 [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]"
       />
 
-      <Container className="grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-2 lg:gap-16 lg:py-28">
-        {/* Left — copy */}
-        <div className="flex flex-col items-start gap-7 text-left">
-          <Reveal>
-            <Badge className="uppercase tracking-wide">{t("eyebrow")}</Badge>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1
-              id="hero-heading"
-              className="text-4xl font-bold tracking-tight text-balance text-foreground sm:text-5xl lg:text-6xl"
+      <div aria-hidden="true" className={cn(styles.veil, "absolute inset-0")} />
+      <div aria-hidden="true" className={cn(styles.tint, "absolute inset-0")} />
+
+      <DripOverlay />
+
+      <div className="relative mx-auto flex min-h-[92svh] w-full max-w-page flex-col justify-center px-5 py-24 sm:px-8 lg:px-10">
+        <span
+          className={cn(
+            styles.rise,
+            "inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-[0.18em] text-white uppercase backdrop-blur-sm",
+          )}
+          style={{ animationDelay: "0.1s" }}
+        >
+          <Droplets className="size-3.5 text-brand-green" aria-hidden="true" />
+          {t("eyebrow")}
+        </span>
+
+        <h1
+          id="hero-heading"
+          className="mt-7 max-w-4xl text-4xl leading-[1.05] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
+        >
+          {lines.map((line, i) => (
+            <span
+              key={line}
+              className={cn(styles.rise, "block")}
+              style={{ animationDelay: `${0.25 + i * 0.14}s` }}
             >
-              {t("title")}
-            </h1>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <p className="max-w-xl text-lg leading-relaxed text-pretty text-muted-foreground sm:text-xl">
-              {t("description")}
-            </p>
-          </Reveal>
-          <Reveal delay={0.24} className="w-full sm:w-auto">
-            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <Link
-                href="/contact"
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "w-full sm:w-auto",
-                )}
-              >
-                {t("primary")}
-              </Link>
-              <Link
-                href="/products"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "w-full sm:w-auto",
-                )}
-              >
-                {t("secondary")}
-              </Link>
-            </div>
-          </Reveal>
-          <Reveal delay={0.3}>
-            <p className="text-sm text-muted-foreground">{t("trust")}</p>
-          </Reveal>
+              {line}
+            </span>
+          ))}
+        </h1>
+
+        <p
+          className={cn(
+            styles.rise,
+            "mt-7 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg",
+          )}
+          style={{ animationDelay: "0.75s" }}
+        >
+          {t("description")}
+        </p>
+
+        <div
+          className={cn(styles.rise, "mt-9 flex flex-wrap items-center gap-4")}
+          style={{ animationDelay: "0.9s" }}
+        >
+          <Link
+            href="/quote"
+            className={cn(
+              styles.ctaShadow,
+              "group inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform duration-200 hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent focus-visible:outline-none",
+            )}
+          >
+            {t("primary")}
+            <ArrowRight
+              className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </Link>
+          <Link
+            href="/products"
+            className="inline-flex items-center rounded-md border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-200 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent focus-visible:outline-none"
+          >
+            {t("secondary")}
+          </Link>
         </div>
 
-        {/* Right — placeholder visual. Swap with a real product/irrigation photo. */}
-        <Reveal variant="scaleIn" delay={0.15}>
-          <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-2xl border border-border bg-muted shadow-sm">
-            <Droplets className="size-24 text-primary/25" aria-hidden="true" />
-            <span className="absolute right-4 bottom-4 text-xs font-medium text-muted-foreground">
-              {t("imageLabel")}
-            </span>
-          </div>
-        </Reveal>
-      </Container>
+        <p
+          className={cn(styles.rise, "mt-8 text-sm text-white/70")}
+          style={{ animationDelay: "1s" }}
+        >
+          {t("trust")}
+        </p>
+      </div>
+
+      <span
+        aria-hidden="true"
+        className={cn(styles.cue, "absolute bottom-6 left-1/2 text-white")}
+      >
+        <ChevronDown className="size-6" />
+      </span>
     </section>
   );
 }

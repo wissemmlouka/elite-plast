@@ -3,26 +3,21 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Menu } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { buttonVariants } from "@/components/ui/button";
+import { primaryNav, type ResolvedNavLink } from "@/data/navigation";
+import { pick } from "@/data/types";
 
 import { LanguageSwitcher } from "./language-switcher";
 import { MobileMenu } from "./mobile-menu";
 
-const navHrefs = [
-  { key: "home", href: "/" },
-  { key: "products", href: "/products" },
-  { key: "solutions", href: "/solutions" },
-  { key: "projects", href: "/projects" },
-  { key: "about", href: "/about" },
-  { key: "contact", href: "/contact" },
-] as const;
-
 export function Navbar() {
   const t = useTranslations("nav");
+  const locale = useLocale() as Locale;
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -39,7 +34,10 @@ export function Navbar() {
     setOpen(false);
   }, [pathname]);
 
-  const items = navHrefs.map(({ key, href }) => ({ label: t(key), href }));
+  const items: ResolvedNavLink[] = primaryNav.map((item) => ({
+    href: item.href,
+    label: pick(item.label, locale),
+  }));
 
   return (
     <header
@@ -50,18 +48,19 @@ export function Navbar() {
           : "border-transparent bg-background",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-page items-center justify-between px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto flex h-20 max-w-page items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link
           href="/"
           aria-label="Eline Plast"
-          className="flex items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className="flex items-center rounded-sm focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
         >
           <Image
             src="/logoelineplast.svg"
             alt="Eline Plast"
-            width={68}
-            height={48}
+            width={99}
+            height={70}
             priority
+            className="h-12 w-auto sm:h-14"
           />
         </Link>
 
@@ -89,7 +88,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-4 lg:flex">
           <LanguageSwitcher />
-          <Link href="/contact" className={cn(buttonVariants())}>
+          <Link href="/quote" className={cn(buttonVariants())}>
             {t("requestQuote")}
           </Link>
         </div>
@@ -102,7 +101,7 @@ export function Navbar() {
             aria-haspopup="dialog"
             aria-expanded={open}
             aria-label={t("openMenu")}
-            className="inline-flex size-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="inline-flex size-11 items-center justify-center rounded-md text-foreground transition-colors hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none"
           >
             <Menu className="size-6" />
           </button>

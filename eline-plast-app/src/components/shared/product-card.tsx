@@ -1,36 +1,35 @@
 import { ArrowRight } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { Card } from "@/components/ui/card";
+import type { Locale } from "@/i18n/routing";
+import { pick, type Product } from "@/data/types";
 
 interface ProductCardProps {
-  icon: LucideIcon;
-  title: string;
-  description: string;
+  product: Product;
+  locale: Locale;
   cta: string;
-  href?: string;
   className?: string;
 }
 
 /**
- * Product-category card: icon + name + short description + CTA.
- * The whole card is a single (locale-aware) link. Server component.
+ * Product tile: icon, name, one-line summary, CTA. Takes the whole record so
+ * the card never holds business copy of its own. Server component.
  */
 export function ProductCard({
-  icon: Icon,
-  title,
-  description,
+  product,
+  locale,
   cta,
-  href = "/products",
   className,
 }: ProductCardProps) {
+  const Icon = product.icon;
+
   return (
     <Link
-      href={href}
+      href={{ pathname: "/products/[slug]", params: { slug: product.slug } }}
       className={cn(
-        "group block h-full rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        "group block h-full rounded-lg focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none",
         className,
       )}
     >
@@ -40,14 +39,19 @@ export function ProductCard({
             <Icon className="size-6" aria-hidden="true" />
           </span>
           <div className="flex flex-col gap-2">
-            <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-            <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-              {description}
+            <h3 className="text-lg font-semibold text-foreground">
+              {pick(product.name, locale)}
+            </h3>
+            <p className="line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+              {pick(product.summary, locale)}
             </p>
           </div>
           <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-primary">
             {cta}
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight
+              className="size-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
           </span>
         </div>
       </Card>

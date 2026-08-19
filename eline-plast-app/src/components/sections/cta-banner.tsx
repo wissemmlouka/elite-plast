@@ -15,7 +15,7 @@ export function CTABanner() {
           <CTA
             title={t("title")}
             description={t("description")}
-            action={{ label: t("primary"), href: "/contact" }}
+            action={{ label: t("primary"), href: "/quote" }}
             secondaryAction={{ label: t("secondary"), href: "/products" }}
           />
         </Reveal>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useParams } from "next/navigation";
 import { useLocale } from "next-intl";
 
 import { cn } from "@/lib/utils";
@@ -12,7 +13,16 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 export function LanguageSwitcher({ className }: { className?: string }) {
   const locale = useLocale();
   const pathname = usePathname();
+  const params = useParams();
   const router = useRouter();
+
+  // Carries route params across the switch, so /fr/produits/tuyaux-pehd lands
+  // on /en/products/tuyaux-pehd rather than the listing.
+  const goTo = (next: string) => {
+    // @ts-expect-error -- params are validated per-route by next-intl, and the
+    // switcher is generic over every route.
+    router.replace({ pathname, params }, { locale: next });
+  };
 
   return (
     <div
@@ -29,7 +39,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
           <button
             key={loc}
             type="button"
-            onClick={() => router.replace(pathname, { locale: loc })}
+            onClick={() => goTo(loc)}
             aria-current={active ? "true" : undefined}
             className={cn(
               "rounded px-2 py-1 text-xs font-semibold uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
