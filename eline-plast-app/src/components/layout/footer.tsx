@@ -36,10 +36,10 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-5">
             <Image
-              src="/logoelineplast.svg"
+              src="/logo-eline-plast.svg"
               alt={company.name}
-              width={127}
-              height={90}
+              width={573}
+              height={371}
               className="h-16 w-auto"
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">

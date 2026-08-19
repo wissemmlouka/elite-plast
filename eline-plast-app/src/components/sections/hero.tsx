@@ -6,6 +6,8 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 
+import { HeroStats } from "./hero-stats";
+import { HeroVideo } from "./hero-video";
 import styles from "./hero.module.css";
 
 /**
@@ -83,7 +85,7 @@ export function Hero({ locale }: { locale: string }) {
       className={cn(
         outfit.variable,
         styles.hero,
-        "relative isolate min-h-[92svh] overflow-hidden",
+        "relative isolate -mt-20 min-h-[92svh] overflow-hidden",
       )}
       // Outfit for this section only; the rest of the site keeps Inter/Manrope.
       style={
@@ -94,16 +96,11 @@ export function Hero({ locale }: { locale: string }) {
       }
       aria-labelledby="hero-heading"
     >
-      <video
-        className={cn(styles.media, "absolute inset-0 size-full object-cover")}
+      <HeroVideo
         src="/videos/hero-irrigation.mp4"
+        srcMobile="/videos/hero-irrigation-mobile.mp4"
         poster="/images/hero-irrigation.jpg"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
+        posterMobile="/images/hero-irrigation-mobile.jpg"
       />
 
       <div aria-hidden="true" className={cn(styles.veil, "absolute inset-0")} />
@@ -115,7 +112,7 @@ export function Hero({ locale }: { locale: string }) {
         <span
           className={cn(
             styles.rise,
-            "inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-[0.18em] text-white uppercase backdrop-blur-sm",
+            "inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-[0.18em] text-white uppercase backdrop-blur-sm max-lg:backdrop-blur-none",
           )}
           style={{ animationDelay: "0.1s" }}
         >
@@ -145,7 +142,11 @@ export function Hero({ locale }: { locale: string }) {
           )}
           style={{ animationDelay: "0.75s" }}
         >
-          {t("description")}
+          {t.rich("description", {
+            nb: (chunks) => (
+              <span className="whitespace-nowrap">{chunks}</span>
+            ),
+          })}
         </p>
 
         <div
@@ -167,7 +168,7 @@ export function Hero({ locale }: { locale: string }) {
           </Link>
           <Link
             href="/products"
-            className="inline-flex items-center rounded-md border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-200 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent focus-visible:outline-none"
+            className="inline-flex items-center rounded-md border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm max-lg:backdrop-blur-none transition-colors duration-200 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent focus-visible:outline-none"
           >
             {t("secondary")}
           </Link>
@@ -179,6 +180,10 @@ export function Hero({ locale }: { locale: string }) {
         >
           {t("trust")}
         </p>
+
+        <div className={styles.rise} style={{ animationDelay: "1.1s" }}>
+          <HeroStats />
+        </div>
       </div>
 
       <span

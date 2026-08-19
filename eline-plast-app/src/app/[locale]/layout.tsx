@@ -124,7 +124,7 @@ export default async function LocaleLayout({
             {t("skipToContent")}
           </a>
           <Navbar />
-          <main id="main" className="flex-1 scroll-mt-20">
+          <main id="main" className="flex-1 pt-20 scroll-mt-20">
             {children}
           </main>
           <Footer />

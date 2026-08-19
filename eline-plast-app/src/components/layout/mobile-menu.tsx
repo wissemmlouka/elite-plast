@@ -39,10 +39,10 @@ export function MobileMenu({
 
           <div className="flex h-20 items-center justify-between px-5">
             <Image
-              src="/logoelineplast.svg"
+              src="/logo-eline-plast.svg"
               alt="Eline Plast"
-              width={99}
-              height={70}
+              width={573}
+              height={371}
               className="h-12 w-auto"
             />
             <Dialog.Close

@@ -9,8 +9,16 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 
 /**
  * Toggles between the configured locales while preserving the current route.
+ * `light` is for the transparent navbar over the hero, where the default
+ * border and muted text would disappear against the photograph.
  */
-export function LanguageSwitcher({ className }: { className?: string }) {
+export function LanguageSwitcher({
+  className,
+  light = false,
+}: {
+  className?: string;
+  light?: boolean;
+}) {
   const locale = useLocale();
   const pathname = usePathname();
   const params = useParams();
@@ -27,7 +35,8 @@ export function LanguageSwitcher({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-0.5 rounded-md border border-border p-0.5",
+        "inline-flex items-center gap-0.5 rounded-md border p-0.5 transition-colors",
+        light ? "border-white/30" : "border-border",
         className,
       )}
       role="group"
@@ -42,10 +51,11 @@ export function LanguageSwitcher({ className }: { className?: string }) {
             onClick={() => goTo(loc)}
             aria-current={active ? "true" : undefined}
             className={cn(
-              "rounded px-2 py-1 text-xs font-semibold uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-              active
-                ? "bg-primary text-primary-foreground"
-                : "text-muted-foreground hover:text-foreground",
+              "cursor-pointer rounded px-2 py-1 text-xs font-semibold uppercase transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none",
+              active && !light && "bg-primary text-primary-foreground",
+              active && light && "bg-white text-brand-navy",
+              !active && !light && "text-muted-foreground hover:text-foreground",
+              !active && light && "text-white/75 hover:text-white",
             )}
           >
             {loc}
